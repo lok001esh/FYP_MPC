@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Password Reset{% endblock %}</title>
+  <!-- Include your CSS and JS files here -->
+  <link rel="stylesheet" type="text/css" href="{% static 'master.css' %}">
+  <style>
+     body {
+        background-image: url('{% static "22.jpeg" %}');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        font-family: "Times New Roman", Times, serif;
+        {% comment %} margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; {% endcomment %}
+      } 
+  </style> 
+</head>
+<body>
+  <!-- Include your header and navigation here -->
+  <header>
+    <div class="logo">
+        <img src="{% static '6.jpg' %}" alt="Logo">
+    </div>
+    <h1>Music Genre Classification</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'landing' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
+        </ul>
+    </nav>
+  </header>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+  <!-- Include your footer here -->
+  <footer>
+    <p>&copy; 2023 Music Genre Classification Project. All rights reserved.</p>
+  </footer>
+</body>
+</html>

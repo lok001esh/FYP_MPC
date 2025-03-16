@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Genre Classification</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'history.css' %}">
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: 'Times New Roman', Times, serif, sans-serif;
+        background-image: url('{% static "22.jpeg" %}');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }  
+  </style>
+<body>
+  <header>
+    <div class="logo">
+      <img src="{% static '6.jpg' %}" alt="Logo">
+    </div>
+    <h1>Music Genre Classification</h1>
+    <nav>
+      <ul>
+        <li><a href="/home/">Home</a></li>
+        <li class="profile-dropdown">
+          <a href="#" class="profile-icon">
+            <img src="{% static '3i.jpg' %}" alt="Icon">
+            <span class="username">{{ request.user.username }}</span>
+          </a>
+          <ul class="dropdown-content">
+            <li><a href="{% url 'update_profile' %}">Update Profile</a></li>
+            <li><a href="{% url 'update_password' %}">Update Password</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% comment %} <li><a href="{% url 'landing' %}">Logout</a></li> {% endcomment %}
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="classification-history">
+      <h2 class="classification-history-title">Classification History</h2>
+      <table class="classification-history-table">
+        <thead>
+          <tr>
+            <th>Uploaded File</th>
+            <th>Classified Genre</th>
+            <th>Date and Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in history %}
+          <tr>
+            <td>{{ entry.music_file_name }}</td>
+            <td>{{ entry.classified_genre }}</td>
+            <td>{{ entry.classification_date }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="3">No classification history available.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <div class="reset-button-container">
+        <form action="{% url 'reset_history' %}" method="post">
+          {% csrf_token %}
+          <button type="submit" class="reset-button">Reset History</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2023 Music Genre Classification. All rights reserved.</p>
+  </footer>
+</body>
+</html>

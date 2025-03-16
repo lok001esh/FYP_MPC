@@ -1,0 +1,392 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+  background-image: url('{% static "3.jpg" %}');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  height: 60px;
+  width: 90px;
+  border-radius: 30px;
+  margin-right: 20px;
+  margin-left: 8px;
+}
+
+header h1 {
+  margin-right: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+nav ul li:not(:last-child) {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a.active {
+  background-color: #4CAF50;
+  border-radius: 5px;
+}
+
+nav ul li:last-child {
+  margin-left: auto;
+}
+
+main {
+  flex-grow: 1;
+  padding: 30px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 30px;
+  background-color: transparent;
+  border: 0px solid #ccc;
+  border-radius: 15px;
+  padding: 10px;
+  color: #fff;
+  font-size: 25px;
+  font-family: Copperplate, Papyrus, fantasy;
+  font-weight: bold;
+}
+
+.hero h2 {
+  margin-top: 0;
+  color: #fff;
+  font-size: 35px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.feature {
+  background-color:#f2f2f2;
+  border: 3px solid;
+  border-color: black;
+  border-radius: 15px;
+  padding: 20px;
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: 105px;
+  margin-right: 105px;
+}
+
+.feature h3 {
+  margin-top: 0;
+}
+
+.green-button {
+  display: inline-block;
+  background-color: #4CAF50; /* Green background color */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Add padding to make the button look visually appealing */
+  border-radius: 8px; /* Add rounded corners */
+  text-decoration: none; /* Remove underline from the link */
+  width: 200px; /* Add fixed width for equal size */
+  font-weight: bold; /* Add bold text */
+}
+
+/* On hover, change the background color for the green button */
+.green-button:hover {
+  background-color: #45a049; /* Slightly darker green on hover */
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* css for user profile */
+
+.profile-dropdown {
+  position: relative;
+}
+
+.username {
+  margin-right: 5px;
+}
+
+.profile-icon {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.profile-icon img {
+  width: 25px;
+  height: 26px;
+  margin-left: 8px;
+  margin-right: 5px;
+  border-radius: 12px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  right: 0;
+  left: auto;
+}
+
+.dropdown-content li {
+  margin-bottom: 10px;
+}
+
+.dropdown-content a {
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  color: #007bff;
+}
+
+.profile-dropdown:hover .dropdown-content {
+  display: block;
+  right: 0;
+  left: auto;
+}
+
+/* Responsive Styling */
+
+@media screen and (max-width: 1024px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .hero {
+    font-size: 20px;
+  }
+
+  .features .feature {
+    width: calc(50% - 20px);
+    justify-content: center; 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    font-size: 18px;
+  }
+
+  .features .feature {
+    width: 75%;
+    justify-content: center; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header h1 {
+    font-size: 22px;
+  }
+
+  .hero h2 {
+    font-size: 26px;
+  }
+
+  .features .feature {
+    margin-left: 50px;
+    margin-right: 20px;
+    justify-content: center; 
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------- */
+/* @media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  .features {
+    flex-direction: column;
+  }
+
+  .feature {
+    width: 100%;
+  }
+} */
+
+
+/* CSS for update profile (base.html) */
+
+.update-profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 50vh;
+  margin-left: 80px;
+  padding: 5px;
+}
+
+.update-profile-heading {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 2px;
+}
+
+.update-profile-form {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #333;
+  border-radius: 20px;
+  padding: 10px;
+  width: 400px;
+}
+
+.update-profile-form label {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  width: 200px; /* Set the width of the labels */
+}
+
+.update-profile-form input,
+.update-profile-form select {
+  font-family: "Times New Roman", Times, serif;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 300px; /* Set a fixed width for the input fields */
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.update-profile-form textarea {
+  font-family: "Times New Roman", Times, serif;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.update-profile-form .update-button {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box
+}
+
+.update-profile-form .update-button:hover {
+  background-color: #45a049;
+}
+
+/* Media queries for responsiveness */
+
+/* For screens with a maximum width of 768px (e.g., tablets and smaller) */
+@media screen and (max-width: 768px) {
+  .update-profile-container {
+    padding: 10px;
+  }
+
+  .update-profile-heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .update-profile-form {
+    width: 110%;
+  }
+}
+
+/* For screens with a maximum width of 576px (e.g., smartphones and smaller) */
+@media screen and (max-width: 576px) {
+  .update-profile-heading {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .update-profile-form {
+    padding: 10px;
+  }
+
+  .update-profile-form .update-button {
+    padding: 8px 16px;
+  }
+}

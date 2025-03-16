@@ -1,0 +1,44 @@
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+
+{% load static %}
+
+{% block content %}
+<head>
+ <title>Music File Upload</title>
+ <link rel="stylesheet" type="text/css" href="{% static 'upload.css' %}">
+ <style>
+    body {
+        background-image: url('{% static "7.jpg" %}');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        font-family: "Times New Roman", Times, serif;
+      }
+      .upload-section {
+        width: 450px;
+        margin: auto;
+        margin-left: 600px;
+        margin-top: 27vh;
+        padding: 20px;
+        background-color: transparent;
+        border: 3px dotted #0c0303;
+        border-radius: 20px;
+        font-family: "Times New Roman", Times, serif;
+        box-sizing: border-box; /* Added property */
+      }
+      
+</style>      
+
+<div class="upload-section">
+  <div class="back-button">
+    <a href="{% url 'home' %}" class="back">&laquo; Back</a>
+  <h2 class="title">Classify your music genre here !</h2>
+  <form action="{% url 'upload' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="music_file" accept=".mp3, .wav" required>
+    <br>
+    <button type="submit" class="upload-button">Upload and predict</button>
+</form>
+</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Music Genre Classification</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+    <style>
+        body {
+            background-image: url('{% static "7.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            font-weight: bold;
+        }    
+        .error-message {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+            color: red;
+            text-align: center;
+        }
+        p {
+            font-family: "Times New Roman", Times, serif;
+            font-weight: bold;
+            margin-top: 7px;
+          }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="back-button">
+                <a href="{% url 'landing' %}" class="back">&laquo; Back</a>
+            
+            <h2>Login to Music Genre Classification</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="input-container">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                </div>
+                <div class="input-container">
+                    {{ form.password.label_tag }}
+                    {{ form.password }}
+                </div>
+                <div class="submit-container">
+                    <input type="submit" value="Login">
+                </div>
+                {% if form.errors %}
+                    <p class="error-message">Invalid email or password.</p>
+                {% endif %}
+            </div>
+            </form>
+            <p><a href="{% url 'password_reset' %}">Forgot Password?</a></p>
+            <p>Don't have an account? <a href="{% url 'signup' %}">Sign up here</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background-image: url('{% static "22.jpeg" %}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo img {
+    height: 60px;
+    width: 90px;
+    border-radius: 30px;
+    margin-right: 20px;
+    margin-left: 4px;
+  }
+  
+  header h1 {
+    margin-right: auto;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
+  
+  nav ul li:not(:last-child) {
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav ul li a.active {
+    background-color: #4CAF50;
+    border-radius: 5px;
+  }
+  
+  nav ul li:last-child {
+    margin-left: auto;
+  }
+  
+  main {
+    flex-grow: 1;
+    padding: 30px;
+  }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* css for user profile */
+
+.profile-dropdown {
+  position: relative;
+}
+
+.username {
+  margin-right: 5px;
+}
+
+.profile-icon {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.profile-icon img {
+  width: 25px;
+  height: 26px;
+  margin-left: 8px;
+  margin-right: 5px;
+  border-radius: 12px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  right: 0;
+  left: auto;
+}
+
+.dropdown-content li {
+  margin-bottom: 10px;
+}
+
+.dropdown-content a {
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  color: #007bff;
+}
+
+.profile-dropdown:hover .dropdown-content {
+  display: block;
+  right: 0;
+  left: auto;
+}
+
+
+.classification-history-title {
+    font-size: 28px;
+    text-align: center;
+    margin-left: 390px;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+.classification-history-table {
+    margin: 0 auto;
+    width: 50%;
+    margin-left: 500px;
+    border-collapse: collapse;
+}
+
+.classification-history-table th,
+.classification-history-table td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 2px solid #000;
+}
+
+.classification-history-table th {
+    background-color: #000;
+    color: #fff;
+}
+
+.classification-history-table td {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.classification-history-table tr:nth-child(even) td {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.reset-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.reset-button {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 80px;
+}
+
+.reset-button:hover {
+  background-color: #45a049;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .classification-history-title {
+    font-size: 24px; /* Reduce the font size for smaller screens */
+    margin-left: 0; /* Remove the left margin */
+  }
+
+  .classification-history-table {
+    width: 90%; /* Reduce the width to fit smaller screens */
+    margin-left: 5%; /* Center the table on smaller screens */
+  }
+
+  .classification-history-table th,
+  .classification-history-table td {
+    padding: 8px; /* Reduce the padding for smaller screens */
+  }
+
+  .reset-button-container {
+    justify-content: center; /* Center the reset button on smaller screens */
+  }
+
+  .reset-button {
+    margin-right: 0; /* Remove the right margin */
+  }
+}
+
+
+/* --------------------------------------------------- */
+/* @media screen and (max-width: 480px) {
+    
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      
+        nav ul li {
+          display: block;
+          margin: 10px 0;
+        }
+      
+        main {
+          padding: 20px;
+        }
+    .classification-history-title {
+        font-size: 20px;
+    }
+
+    .classification-history-table th,
+    .classification-history-table td {
+        padding: 8px;
+    }
+
+    footer p {
+        font-size: 12px;
+    }
+} */

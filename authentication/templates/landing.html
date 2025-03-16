@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Music Genre Classification</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'landing.css' %}">
+    <script src="{% static 'landing.js' %}"></script>
+    <style>
+        body {
+            background-image: url('{% static "3.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static '6.jpg' %}" alt="Logo">
+        </div>
+        <h1>Music Genre Classification</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'landing' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="main-section">
+        <h1 class="heading">Music Genre Classification For</h1>
+        <p class="genre-list">Music Genre classifier for POP, Hip-Hop, classical, Reggae, Jazz, Blues, Rock, Metal, Disco.</p>
+        <a href="{% url 'signup' %}" class="get-started-btn">Get Started !</a>
+    </section>
+    <footer>
+        <p>&copy; 2023 Music Genre Classification Project. All rights reserved.</p>
+    </footer>
+</body>
+</html>

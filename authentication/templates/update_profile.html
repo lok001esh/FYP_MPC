@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="update-profile-container">
+  <h2 class="update-profile-heading">Update Profile</h2>
+  <form method="post" class="update-profile-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="update-button">Update</button>
+  </form>
+</div>
+{% endblock %}

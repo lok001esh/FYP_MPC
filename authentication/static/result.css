@@ -1,0 +1,318 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif, sans-serif;
+  background-image: url('{% static ".jpg" %}');
+  background-color: #f2f2f2;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  height: 60px;
+  width: 90px;
+  border-radius: 30px;
+  margin-right: 20px;
+  margin-left: 8px;
+}
+
+header h1 {
+  margin-right: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+nav ul li:not(:last-child) {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a.active {
+  background-color: #4CAF50;
+  border-radius: 5px;
+}
+
+nav ul li:last-child {
+  margin-left: auto;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+footer p {
+  margin: 0;
+}
+.profile-dropdown {
+  position: relative;
+}
+
+.username {
+  margin-right: 5px;
+}
+
+.profile-icon {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.profile-icon img {
+  width: 25px;
+  height: 26px;
+  margin-left: 8px;
+  margin-right: 5px;
+  border-radius: 12px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  right: 0;
+  left: auto;
+}
+
+.dropdown-content li {
+  margin-bottom: 10px;
+}
+
+.dropdown-content a {
+  color: #333;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  color: #007bff;
+}
+
+.profile-dropdown:hover .dropdown-content {
+  display: block;
+  right: 0;
+  left: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* For left and right image */
+
+.top-left-image {
+  position: absolute;
+  width: 120px; /* Set the width of the image */
+  height: 200px; /* Set the height of the image */
+  margin-top: 130px;
+  margin-left: 65px;
+}
+.top-right-image {
+  position: absolute;
+  right: 0;
+  width: 160px; /* Set the width of the image */
+  height: 160px; /* Set the height of the image */
+  margin-top: 140px;
+  margin-right: 30px;
+}
+
+.result {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 40px;
+  background-color: #fff;
+  border: 3px solid;
+  border-color: black;
+  border-radius: 15px;
+  padding: 20px;
+  width: 800px;
+  box-sizing: border-box;
+  font-family: Copperplate, Papyrus, fantasy;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.genre-distribution {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.genre-distribution .genre-info {
+  width: 45%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.genre-distribution .genre-info h2 {
+  margin-bottom: 10px;
+}
+
+.genre-distribution .genre-info img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.download-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.download-links .download-button {
+  margin-top: 10px;
+}
+
+.download-links .download-button a {
+  text-decoration: none;
+}
+
+.download-links .download-button button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 16px;
+  width: 260px; /* Add fixed width for equal size */
+  transition: background-color 0.3s;
+}
+
+.download-links .download-button button:hover {
+  background-color: #45a049;
+}
+
+.classify-another-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.classify-another-button button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.classify-another-button button:hover {
+  background-color: #45a049;
+}
+
+@media screen and (max-width: 768px) {
+  .genre-distribution .genre-info {
+    width: 100%;
+  }
+}
+
+/*--------------------- Additional Media queries for responsiveness--------------------- */
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  /* Header styles for smaller screens */
+  header {
+    padding: 10px;
+  }
+
+  .logo img {
+    height: 40px;
+    width: 60px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+
+  nav ul li {
+    margin-right: 10px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+
+  /* Genre distribution styles for smaller screens */
+  .genre-distribution .genre-info {
+    width: 100%;
+  }
+
+  /* Result styles for smaller screens */
+  .result {
+    font-size: 16px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Download button styles for smaller screens */
+  .download-links .download-button button {
+    width: 100%;
+  }
+
+  /* Classify another button styles for smaller screens */
+  .classify-another-button button {
+    width: 100%;
+  }
+
+  /* For left image on smaller screens */
+  .top-left-image {
+    width: 80px;
+    height: 133px;
+    margin-top: 120px;
+    margin-left: 50px;
+  }
+
+  /* For right image on smaller screens */
+  .top-right-image {
+    width: 100px;
+    height: 100px;
+    margin-top: 200px;
+    margin-right: 40px;
+  }
+}
+
+  

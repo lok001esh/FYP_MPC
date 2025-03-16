@@ -1,0 +1,180 @@
+/* Reset default browser styles */
+body, h1, p, ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+}
+
+body {
+    font-size: 16px;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color:  #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 60px;
+    width: 90px;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
+header h1 {
+    margin-right: auto;
+    color:white;
+  }
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+    margin-top: auto;
+}
+
+/* Password Reset Form Styling */
+.password-reset-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    margin-left: 100px;
+    margin-top: 160px;
+  }
+
+  .password-email-sent {
+    width: 300px;
+    padding: 30px;
+    border: 2px solid #333;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 18px;
+    margin-top: 160px;
+    margin-left: 450px;
+    text-align: center;
+  }
+  
+form {
+    width: 300px;
+    padding: 30px;
+    border: 2px solid #333;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 18px;
+  }
+  
+.form-group {
+    margin-bottom: 20px;
+  }
+  
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center; /* Center the text */
+    text-decoration: underline;
+  }
+  
+form label {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+form input[type="email"] {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+  
+.reset-button {
+    width: 98%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+  }
+  
+.reset-button:hover {
+    background-color: #45a049;
+  } 
+
+/* CSS for page password_reset_confirm */
+
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 2px solid #333;  */
+  border-radius: 15px;
+  padding: 35px;
+}
+
+.content-container {
+  text-align: center;
+}
+
+.form-group {
+  margin: 10px 0;
+}
+
+form input[type="password"] {
+  width: 80%; /* Set the width of the form fields to be 100% */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.reset-button {
+  background-color: green;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+} 

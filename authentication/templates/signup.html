@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up To Music Genre Classification</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}">
+    <style>
+        body {
+            background-image: url('{% static "22.jpeg" %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        } 
+        .container {
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: 200px;
+            margin-top: 20px;
+            padding: 25px;
+            background-color: #ffffff;
+            border: 3px solid #ccc;
+            border-radius: 30px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+          } 
+          
+          /* Responsive Styling */
+@media screen and (max-width: 768px) {
+    .container {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 15px;
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 90%;
+    }
+  
+    input[type="submit"] {
+      width: 100%;
+    }
+  }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-button">
+            <a href="{% url 'landing' %}" class="back">&laquo; Back</a>
+        </div>
+        <h2>Sign Up To Music Genre Classification</h2>
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div>
+                    {{ field.label_tag }}
+                    {{ field }}
+                    {% if field.errors %}
+                        <div class="error-message">
+                            {{ field.errors|join:", " }}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <input type="submit" value="Sign Up">
+            <a href="{% url 'social:begin' 'google-oauth2' %}">Sign up with Google</a>
+        </form>
+        <p>Already signed up? <a href="{% url 'login' %}">Login here</a>.</p>
+    </div>
+</body>
+</html>
